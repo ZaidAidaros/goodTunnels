@@ -5,6 +5,7 @@ class SubCommitmentM{
   
   int? id;
   int? reqNo;
+  int? isApproved;
   int? authNo;
   int? docChapter;
   int? docPart;
@@ -16,9 +17,10 @@ class SubCommitmentM{
   int? expectedPaymentDate;
   String? description;
 
-  SubCommitmentM.fromMap(Map<String,Object> map){
+  SubCommitmentM.fromMap(Map<String,Object?> map){
     id=map[columId] as int;
     reqNo=map[columReqNo] as int;
+    isApproved = map[columIsApproved] as int;
     authNo=map[columAuthNo] as int;
     docChapter = map[columDOCChapter] as int;
     docPart = map[columDOCPart] as int;
@@ -38,6 +40,9 @@ class SubCommitmentM{
     }
     if(reqNo != null){
       map[columReqNo]=reqNo!;
+    }
+    if(isApproved!=null){
+      map[columIsApproved]= isApproved!;
     }
     if(authNo != null){
       map[columAuthNo]=authNo!;

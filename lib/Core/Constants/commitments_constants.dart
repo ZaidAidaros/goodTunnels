@@ -1,6 +1,7 @@
 //Commitments Table
 const String commitTableNamt = "Commitments";
 const String columReqNo = "RequestNo";
+const String columIsApproved = "IsApprovde";
 const String columCodinBlocCode = "CodingBCodelock";
 const String columAdminUnit = "AdminUint";
 const String columAuthEntity = "AuthEntity";
@@ -17,5 +18,6 @@ const String sqlCreateSubCommitmentTable=
       $columAuthOfficer TEXT NOT NULL,
       $columForDuratiom TEXT NOT NULL,
       $columSubmitDate INTEGER NOT NULL,
+      $columIsApproved INTEGER NOT NULL
     )
 ''';

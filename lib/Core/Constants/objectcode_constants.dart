@@ -1,5 +1,5 @@
 import 'package:goodtunnels/Core/Constants/codingblock_constants.dart';
-import 'package:goodtunnels/Models/objectcode.dart';
+import 'package:goodtunnels/Models/SharedModels/objectcode.dart';
 
 const String objectCodeTName = "ObjectCode";
 const String chapterTName = "Chapter";

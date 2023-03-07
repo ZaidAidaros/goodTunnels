@@ -3,6 +3,7 @@ import 'package:goodtunnels/Core/Constants/commitments_constants.dart';
 
 const String subCommitmentTableNamt = "CommitmentDetails";
 const String columId = "ID";
+const String columUId = "UID";
 const String columAuthNo = "AuthorizationNo";
 const String columDOCChapter = "chapterNo";
 const String columDOCPart = "partNo";
@@ -28,5 +29,6 @@ const String sqlCreateSubCommitmentTable=
       $columBalanceAfter INTEGER NOT NULL,
       $columExpectedPayDate INTEGER NOT NULL,
       $columDescription TEXT NOT NULL,
+      $columIsApproved INTEGER NOT NULL
     )
 ''';

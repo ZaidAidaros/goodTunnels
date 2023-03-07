@@ -6,9 +6,9 @@ class UserM{
   int? id;
   String? name;
   String? password;
-  int? permId;
+  
   UserM.fromMap(Map map){
-    id = map[columId];
+    id = map[columUId];
     name = map[columName];
     password = map[columPass];
   }
@@ -16,7 +16,7 @@ class UserM{
   toMap(){
     Map<String,Object> map = <String,Object>{};
     if(id!=null){
-      map[columId] = id!;
+      map[columUId] = id!;
       map[columName] = name.toString();
       map[columPass] = password.toString();
     }

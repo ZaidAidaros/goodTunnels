@@ -3,6 +3,7 @@ import 'package:goodtunnels/Core/Constants/commitments_constants.dart';
 class CommitmentM{
 
   int? requestNo;
+  int? isApproved;
   int? codingblockcode;
   String? adminUint;
   String? authEntity;
@@ -10,8 +11,9 @@ class CommitmentM{
   String? forDuration;
   int? submitDate;
 
-  CommitmentM.fromMap(Map<String,Object> map){
+  CommitmentM.fromMap(Map<String,Object?> map){
     requestNo = map[columReqNo] as int;
+    isApproved = map[columIsApproved] as int;
     codingblockcode = map[columReqNo] as int;
     adminUint = map[columAdminUnit].toString();
     authEntity = map[columAuthEntity].toString();
@@ -24,6 +26,9 @@ class CommitmentM{
     Map<String,Object> map = <String,Object>{};
     if(requestNo!=null){
       map[columReqNo]= requestNo!;
+    }
+    if(isApproved!=null){
+      map[columIsApproved]= isApproved!;
     }
     if(codingblockcode!=null){
       map[columReqNo]= codingblockcode!;

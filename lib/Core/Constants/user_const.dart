@@ -7,7 +7,7 @@ const String columPass="pass";
 
 const String sqlCreateProjectTable=
 '''CREATE TABLE '$userTName' (
-      $columId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+      $columUId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
       $columName TEXT NOT NULL,
       $columPass TEXT NOT NULL,
     )

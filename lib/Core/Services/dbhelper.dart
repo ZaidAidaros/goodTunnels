@@ -27,9 +27,13 @@ class DBHelper{
     }
   }
 
-  Future<List<Map>> getData(String sql)async{
+  Future<List<Map<String, Object?>>> getData(String table)async{
     Database? myDb = await db;
-    return myDb!.rawQuery(sql);
+    return myDb!.query(table);
+  }
+  Future<List<Map<String, Object?>>> getDataOne(String table,String columN, var columV)async{
+    Database? myDb = await db;
+    return myDb!.query(table,where:'$columN = ?',whereArgs: [columV] );
   }
 
   insertData(String table, Map<String, Object?> values )async{
@@ -37,14 +41,15 @@ class DBHelper{
     myDb!.insert(table, values);
   }
 
-  upDateData(String table,Map<String, Object?> values )async{
+  upDateData(String table,Map<String, Object?> values ,String columN, var columV)async{
     Database? myDb = await db;
-    int c = await myDb!.update(table, values,where: 'ID = ?', whereArgs: [values['ID']]);
+    int c = await myDb!.update(table, values, where:'$columN = ?' ,whereArgs: [columV]);
     return c;
   }
-  deletData(String table, Map<String, Object?> values )async{
+
+  deletData(String table, Map<String, Object?> values,String columN, var columV)async{
     Database? myDb = await db;
-    int c = await myDb!.delete(table,where: 'ID = ?', whereArgs: [values['ID']]);
+    int c = await myDb!.delete(table,where: '$columN = ?', whereArgs: [columV]);
     return c;
   }
 

@@ -37,31 +37,16 @@ class CodingBlockM{
 
 }
 
-class Organization{
-  int? code;
-  String? name;
-
-    Organization.fromMap(Map<String,Object> map){
-    code = map[columCode] as int;
-    name = map[columName].toString();
-  }
-
-  Map<String,Object> toMap(){
-    Map<String,Object> map = <String,Object>{};
-    if(code != null){
-      map[columCode]=code!;
-    }if(name != null){
-      map[columName]=name!;
-    }
-    return map;
-  }
-}
 
 class Project{
   int? code;
   String? name;
+  int? budget;
+  int? parentCode;
   Project.fromMap(Map<String,Object> map){
     code = map[columCode] as int;
+    budget = map[columBudget] as int;
+    parentCode = map[columParentCode] as int;
     name = map[columName].toString();
   }
 
@@ -69,7 +54,14 @@ class Project{
     Map<String,Object> map = <String,Object>{};
     if(code != null){
       map[columCode]=code!;
-    }if(name != null){
+    }
+    if(budget != null){
+      map[columBudget]=budget!;
+    }
+    if(parentCode != null){
+      map[columParentCode]=parentCode!;
+    }
+    if(name != null){
       map[columName]=name!;
     }
     return map;
