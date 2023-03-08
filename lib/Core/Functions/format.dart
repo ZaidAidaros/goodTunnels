@@ -1,10 +1,10 @@
 
 String formatMesage(List<String> list){
-  String text="";
-  for (var element in list) {
-    text+=";$element";
+  String text=list[0];
+  for (int i=1; i<list.length;i++) {
+    text+=";${list[i]}";
    }
-  text+=":$list[0]";
+  text+=";${list[0]}";
   return text;
 }
 List<String> deFormatMesage(String text){

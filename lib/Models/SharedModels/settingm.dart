@@ -1,10 +1,10 @@
 import 'package:goodtunnels/Core/Constants/setting_const.dart';
 
-class Settings{
+class SettingsM{
   String? keyname;
   String? keyvalue;
 
-  Settings.fromMap(Map<String,Object> map){
+  SettingsM.fromMap(Map<String,Object?> map){
     keyname = map[columKeyname].toString();
     keyname = map[columKeyvalue].toString();
   }
@@ -19,4 +19,7 @@ class Settings{
     return map;
   }
 }
+
+
+
 
