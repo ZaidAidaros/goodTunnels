@@ -26,10 +26,10 @@ class Tashfeer{
 
  Future<void> _setK()async{
   SettingsMH settingsMH = SettingsMH();
-    _key ??= await settingsMH.search(settingTashKey).then((value){
+    _key ??= await settingsMH.search(SettingConst.settingTashKey).then((value){
       _key = enc.Key.fromUtf8(value.keyvalue!);
     });
-    _iv ??= await settingsMH.search(settingTashIkey).then((value){
+    _iv ??= await settingsMH.search(SettingConst.settingTashIkey).then((value){
       _iv = enc.IV.fromUtf8(value.keyvalue!);
     });
     
