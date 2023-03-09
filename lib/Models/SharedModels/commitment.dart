@@ -9,47 +9,65 @@ class CommitmentM{
   String? authEntity;
   String? authOfficer;
   String? forDuration;
-  int? submitDate;
+  String? submitDate;
+  String? rejectResin;
+
+  CommitmentM({
+    this.requestNo,
+    this.codingblockcode,
+    this.isApproved,
+    this.adminUint,
+    this.authEntity,
+    this.authOfficer,
+    this.forDuration,
+    this.submitDate,
+    this.rejectResin
+  });
 
   CommitmentM.fromMap(Map<String,Object?> map){
-    requestNo = map[columReqNo] as int;
-    isApproved = map[columIsApproved] as int;
-    codingblockcode = map[columReqNo] as int;
-    adminUint = map[columAdminUnit].toString();
-    authEntity = map[columAuthEntity].toString();
-    authOfficer = map[columAuthOfficer].toString();
-    submitDate = map[columAdminUnit] as int;
-    forDuration = map[columForDuratiom].toString();
+    requestNo = map[CommitConst.columReqNo] as int;
+    isApproved = map[CommitConst.columIsApproved] as int;
+    codingblockcode = map[CommitConst.columCodinBlocCode] as int;
+    adminUint = map[CommitConst.columAdminUnit].toString();
+    authEntity = map[CommitConst.columAuthEntity].toString();
+    authOfficer = map[CommitConst.columAuthOfficer].toString();
+    submitDate = map[CommitConst.columSubmitDate].toString();
+    forDuration = map[CommitConst.columForDuration].toString();
+    rejectResin = map[CommitConst.columSubmitRejResn].toString();
   }
 
   Map<String,Object> toMap(){
     Map<String,Object> map = <String,Object>{};
     if(requestNo!=null){
-      map[columReqNo]= requestNo!;
+      map[CommitConst.columReqNo]= requestNo!;
     }
     if(isApproved!=null){
-      map[columIsApproved]= isApproved!;
+      map[CommitConst.columIsApproved]= isApproved!;
     }
     if(codingblockcode!=null){
-      map[columReqNo]= codingblockcode!;
+      map[CommitConst.columCodinBlocCode]= codingblockcode!;
     }
     if(adminUint!=null){
-      map[columAdminUnit]= adminUint!;
+      map[CommitConst.columAdminUnit]= adminUint!;
     }
     if(authEntity!=null){
-      map[columAuthEntity]= authEntity!;
+      map[CommitConst.columAuthEntity]= authEntity!;
     }
     if(authOfficer!=null){
-      map[columAuthOfficer]= authOfficer!;
+      map[CommitConst.columAuthOfficer]= authOfficer!;
     }
     if(forDuration!=null){
-      map[columForDuratiom]= forDuration!;
+      map[CommitConst.columForDuration]= forDuration!;
     }
     if(submitDate!=null){
-      map[columSubmitDate]= submitDate!;
+      map[CommitConst.columSubmitDate]= submitDate!;
+    }
+    if(submitDate!=null){
+      map[CommitConst.columSubmitRejResn]= rejectResin!;
     }
 
     return map;
   }
+
 }
 

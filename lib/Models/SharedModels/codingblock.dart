@@ -12,25 +12,25 @@ class CodingBlockM{
  }
 
  CodingBlockM.fromMap(Map<String,Object> map){
-    code = map[columCode] as int;
-    orgCode = map[organizationTableName] as int;
-    projCode = map[projectTableName] as int;
-    foundCode = map[foundTableName] as int;
+    code = map[CodingBlockConst.columCode] as int;
+    orgCode = map[CodingBlockConst.orgTableName] as int;
+    projCode = map[CodingBlockConst.projectTableName] as int;
+    foundCode = map[CodingBlockConst.foundTableName] as int;
   }
 
   Map<String,Object> toMap(){
     Map<String,Object> map = <String,Object>{};
     if(code != null){
-      map[columCode]=code!;
+      map[CodingBlockConst.columCode]=code!;
     }
     if(orgCode != null){
-      map[objectCodeTName]=orgCode!;
+      map[CodingBlockConst.orgTableName]=orgCode!;
     }
     if(projCode != null){
-      map[projectTableName]=projCode!;
+      map[CodingBlockConst.projectTableName]=projCode!;
     }
     if(foundCode != null){
-      map[foundTableName]=foundCode!;
+      map[CodingBlockConst.foundTableName]=foundCode!;
     }
     return map;
   }
@@ -44,25 +44,25 @@ class Project{
   int? budget;
   int? parentCode;
   Project.fromMap(Map<String,Object> map){
-    code = map[columCode] as int;
-    budget = map[columBudget] as int;
-    parentCode = map[columParentCode] as int;
-    name = map[columName].toString();
+    code = map[CodingBlockConst.columCode] as int;
+    budget = map[CodingBlockConst.columBudget] as int;
+    parentCode = map[CodingBlockConst.columParentCode] as int;
+    name = map[CodingBlockConst.columName].toString();
   }
 
   Map<String,Object> toMap(){
     Map<String,Object> map = <String,Object>{};
     if(code != null){
-      map[columCode]=code!;
+      map[CodingBlockConst.columCode]=code!;
     }
     if(budget != null){
-      map[columBudget]=budget!;
+      map[CodingBlockConst.columBudget]=budget!;
     }
     if(parentCode != null){
-      map[columParentCode]=parentCode!;
+      map[CodingBlockConst.columParentCode]=parentCode!;
     }
     if(name != null){
-      map[columName]=name!;
+      map[CodingBlockConst.columName]=name!;
     }
     return map;
   }
@@ -72,16 +72,16 @@ class Found{
   int? code;
   String? name;
   Found.fromMap(Map<String,Object> map){
-    code = map[columCode] as int;
-    name = map[columName].toString();
+    code = map[CodingBlockConst.columCode] as int;
+    name = map[CodingBlockConst.columName].toString();
   }
 
   Map<String,Object> toMap(){
     Map<String,Object> map = <String,Object>{};
     if(code != null){
-      map[columCode]=code!;
+      map[CodingBlockConst.columCode]=code!;
     }if(name != null){
-      map[columName]=name!;
+      map[CodingBlockConst.columName]=name!;
     }
     return map;
   }

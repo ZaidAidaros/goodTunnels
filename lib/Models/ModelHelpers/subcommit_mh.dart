@@ -1,27 +1,27 @@
-import 'package:goodtunnels/Core/Constants/commitments_constants.dart';
+
 import 'package:goodtunnels/Core/Constants/subcommitment_constants.dart';
 import 'package:goodtunnels/Core/Services/dbhelper.dart';
-import 'package:goodtunnels/Models/SharedModels/CommitmentDetails.dart';
+import 'package:goodtunnels/Models/SharedModels/subcommitmentm.dart';
 
 class SubCommitmentMH{
 
   DBHelper dbHelper = DBHelper();
 
   createSubCommitment(SubCommitmentM subCommitmentM){
-    dbHelper.insertData(subCommitmentTableNamt, subCommitmentM.toMap());
+    dbHelper.insertData(SubCommitConst.subCommitTableName, subCommitmentM.toMap());
   }
   updateSubCommitment(SubCommitmentM subCommitmentM){
-    dbHelper .upDateData(subCommitmentTableNamt, subCommitmentM.toMap(),
-    columReqNo,subCommitmentM.toMap()[columReqNo]);
+    dbHelper .upDateData(SubCommitConst.subCommitTableName, subCommitmentM.toMap(),
+    SubCommitConst.columReqNo,subCommitmentM.toMap()[SubCommitConst.columReqNo]);
   }
   approveSubCommitment(SubCommitmentM subCommitmentM){
       subCommitmentM.isApproved=1;
-    dbHelper .upDateData(commitTableNamt, subCommitmentM.toMap(),
-    columReqNo,subCommitmentM.toMap()[columReqNo]);
+    dbHelper .upDateData(SubCommitConst.subCommitTableName, subCommitmentM.toMap(),
+    SubCommitConst.columReqNo,subCommitmentM.toMap()[SubCommitConst.columReqNo]);
   }
   getAllSubCommitments()async{
     List<SubCommitmentM> list =[];
-    await dbHelper.getData(commitTableNamt).then((value) {
+    await dbHelper.getData(SubCommitConst.subCommitTableName).then((value) {
       for (var element in value) { 
         list.add(SubCommitmentM.fromMap(element));
       }
@@ -30,7 +30,7 @@ class SubCommitmentMH{
   }
   getSubCommitNotApproved()async{
     List<SubCommitmentM> list =[];
-    await dbHelper.getDataOne(commitTableNamt,columIsApproved,0).then((value) {
+    await dbHelper.getDataWhere(SubCommitConst.subCommitTableName,SubCommitConst.columIsApproved,0).then((value) {
       for (var element in value) { 
         list.add(SubCommitmentM.fromMap(element));
       }
@@ -39,7 +39,7 @@ class SubCommitmentMH{
   }
   getSubCommitApproved()async{
     List<SubCommitmentM> list =[];
-    await dbHelper.getDataOne(commitTableNamt,columIsApproved,1).then((value) {
+    await dbHelper.getDataWhere(SubCommitConst.subCommitTableName,SubCommitConst.columIsApproved,1).then((value) {
       for (var element in value) { 
         list.add(SubCommitmentM.fromMap(element));
       }

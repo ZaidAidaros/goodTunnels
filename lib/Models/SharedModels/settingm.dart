@@ -5,16 +5,16 @@ class SettingsM{
   String? keyvalue;
 
   SettingsM.fromMap(Map<String,Object?> map){
-    keyname = map[columKeyname].toString();
-    keyname = map[columKeyvalue].toString();
+    keyname = map[SettingConst.columKeyname].toString();
+    keyname = map[SettingConst.columKeyvalue].toString();
   }
 
   Map<String,Object> toMap(){
     Map<String,Object> map = <String,Object>{};
     if(keyname != null){
-      map[columKeyname]=keyname!;
+      map[SettingConst.columKeyname]=keyname!;
     }if(keyvalue != null){
-      map[columKeyvalue]=keyvalue!;
+      map[SettingConst.columKeyvalue]=keyvalue!;
     }
     return map;
   }

@@ -1,4 +1,4 @@
-import 'package:goodtunnels/Core/Constants/subcommitment_constants.dart';
+
 import 'package:goodtunnels/Core/Constants/user_const.dart';
 import 'package:goodtunnels/Core/Services/dbhelper.dart';
 import 'package:goodtunnels/Models/Centeral/userm.dart';
@@ -7,15 +7,15 @@ class UserMH{
   DBHelper dbHelper = DBHelper();
 
   createOrganization(UserM userM){
-    dbHelper.insertData(userTName, userM.toMap());
+    dbHelper.insertData(UserConstants.userTName, userM.toMap());
   }
   updateOrganization(UserM userM){
-    dbHelper.upDateData(userTName, userM.toMap(),
-    columUId,userM.toMap()[columUId]);
+    dbHelper.upDateData(UserConstants.userTName, userM.toMap(),
+    UserConstants.columUId,userM.toMap()[UserConstants.columUId]);
   }
   getAllUsers()async{
     List<UserM> list =[];
-    await dbHelper.getData(userTName).then((value) {
+    await dbHelper.getData(UserConstants.userTName).then((value) {
       for (var element in value) { 
         list.add(UserM.fromMap(element));
       }
@@ -24,8 +24,8 @@ class UserMH{
   }
  Future<UserM?> getUser(int userId)async{
     UserM? userM;
-    await dbHelper.getDataOne(userTName, columUId,userId).then((value) {
-      userM=UserM.fromMap(value.first);
+    await dbHelper.getDataOne(UserConstants.userTName, UserConstants.columUId,userId).then((value) {
+      userM=UserM.fromMap(value);
     });
     return  userM;
   }

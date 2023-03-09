@@ -1,31 +1,39 @@
 import 'package:goodtunnels/Core/Constants/codingblock_constants.dart';
-import 'package:goodtunnels/Core/Constants/objectcode_constants.dart';
-import 'package:goodtunnels/Core/Constants/subcommitment_constants.dart';
 
 class OrganizationM{
   int? code;
   int? userId;
   String? name;
   String? address;
+  String? k;
+  String? iv;
 
 
     OrganizationM.fromMap(Map<String,Object?> map){
-    code = map[columCode] as int;
-    userId = map[columUId] as int;
-    name = map[columName].toString();
-    address = map[columName].toString();
+    code = map[CodingBlockConst.columCode] as int;
+    userId = map[CodingBlockConst.columUId] as int;
+    name = map[CodingBlockConst.columName].toString();
+    address = map[CodingBlockConst.columName].toString();
+    k=map[CodingBlockConst.columK].toString();
+    iv=map[CodingBlockConst.columiv].toString();
   }
 
   Map<String,Object> toMap(){
     Map<String,Object> map = <String,Object>{};
     if(code != null){
-      map[columCode]=code!;
+      map[CodingBlockConst.columCode]=code!;
     }
     if(userId != null){
-      map[columUId]=userId!;
+      map[CodingBlockConst.columUId]=userId!;
     }
     if(name != null){
-      map[columName]=name!;
+      map[CodingBlockConst.columName]=name!;
+    }
+    if(k != null){
+      map[CodingBlockConst.columK]=k!;
+    }
+    if(iv != null){
+      map[CodingBlockConst.columiv]=iv!;
     }
     return map;
   }

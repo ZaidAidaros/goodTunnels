@@ -1,31 +1,41 @@
 import 'package:encrypt/encrypt.dart'as enc;
+import 'package:goodtunnels/Models/ModelHelpers/setting_mh.dart';
+
+import '../Constants/setting_const.dart';
 
 
-testEncKIV(){
-  print("888888888888888888888888");
-  print(enc.Key.fromSecureRandom(16).toString());
-  print("888888888888888888888888");
-  print(enc.IV.fromSecureRandom(8).toString());
-  print("888888888888888888888888");
-}
-class Tasfeer{
+class Tashfeer{
 
-  Tasfeer._(){
-    
-  }
-  final _key = enc.Key.fromSecureRandom(16);
-  final iv = enc.IV.fromSecureRandom(16);
-  //final encrypter = enc.Encrypter(enc.AES(_key));
-  static Tasfeer? _tasfeer;
-  static Tasfeer? get tasfeer{
-    _tasfeer??=Tasfeer._();
-    return _tasfeer;
-  }
   
-    _tashfeer(String tash){
+  
+  late final enc.Encrypter _encrypter ;
+  late final enc.Key? _key;
+  late final enc.IV? _iv;
+  static Tashfeer? _tasfeer;
+  
+ Future<String> tashfeer(String tash,)async{
+    await _setK();
+    _encrypter = enc.Encrypter(enc.AES(_key!));
+    return _encrypter.encrypt(tash,iv: _iv).base64;
 
   }
-  _detashfeer(String tash){
+ Future<String> detashfeer(String tash)async{
+    await _setK();
+    return _encrypter.decrypt64(tash,iv:_iv);
+  }
+
+ Future<void> _setK()async{
+  SettingsMH settingsMH = SettingsMH();
+    _key ??= await settingsMH.search(settingTashKey).then((value){
+      _key = enc.Key.fromUtf8(value.keyvalue!);
+    });
+    _iv ??= await settingsMH.search(settingTashIkey).then((value){
+      _iv = enc.IV.fromUtf8(value.keyvalue!);
+    });
     
+  }
+
+  generateK(){
+
   }
 }

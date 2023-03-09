@@ -1,8 +1,9 @@
-const String settingTName="Settings";
-const String columKeyname="key";
-const String columKeyvalue="value";
+class SettingConst{
+  static const String settingTName="Settings";
+  static const String columKeyname="key";
+  static const String columKeyvalue="value";
 
-const String sqlCreateSettingsTaple=
+  static const String sqlCreateSettingsTaple=
 '''CREATE TABLE "$settingTName" (
       $columKeyname TEXT NOT NULL PRIMARY KEY,
       $columKeyvalue TEXT NOT NULL,
@@ -10,11 +11,13 @@ const String sqlCreateSettingsTaple=
 ''';
 
 //keys
-const String settingOrgCodekey="OrgCode";
-const String settingOrgNamekey="OrgName";
-const String settingOrgAddresskey="OrgAddress";
-const String settingOrgUNamekey="OrgUName";
-const String settingOrgUPasskey="OrgUPassword";
-const String settingISKey="is";
-const String settingTashKey="Tash";
-const String settingTashIkey="Tashi";
+  static const String settingOrgCodekey="OrgCode";
+  static const String settingOrgNamekey="OrgName";
+  static const String settingOrgAddresskey="OrgAddress";
+  static const String settingOrgUNamekey="OrgUName";
+  static const String settingOrgUPasskey="OrgUPassword";
+  static const String settingISKey="is";
+  static const String settingTashKey="Tash";
+  static const String settingTashIkey="Tashi";
+
+}

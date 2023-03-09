@@ -7,22 +7,25 @@ class SettingsMH{
   DBHelper dbHelper = DBHelper();
 
   insertSetting(SettingsM settingsM){
-    dbHelper.insertData(settingTName, settingsM.toMap());
+    dbHelper.insertData(SettingConst.settingTName, settingsM.toMap());
   }
   updateSetting(SettingsM settingsM,String updateColum){
-    dbHelper .upDateData(settingTName, settingsM.toMap(),
-    columKeyname,settingsM.toMap()[columKeyvalue]);
+    dbHelper .upDateData(SettingConst.settingTName, settingsM.toMap(),
+    SettingConst.columKeyname,settingsM.toMap()[SettingConst.columKeyvalue]);
   }
   getAllSetting()async{
     List<SettingsM> list =[];
-    await dbHelper.getData(settingTName).then((value) {
+    await dbHelper.getData(SettingConst.settingTName).then((value) {
       for (var element in value) { 
         list.add(SettingsM.fromMap(element));
       }
     });
     return list;
   }
-  search(String settingKey)async{
-   return SettingsM.fromMap(await dbHelper.getDataOne(settingTName, columKeyname, settingKey));
+  Future<SettingsM> search(String settingKey)async{
+   return SettingsM.fromMap(await dbHelper.getDataOne(
+    SettingConst.settingTName, 
+    SettingConst.columKeyname, 
+    settingKey));
   }
 }

@@ -14,21 +14,21 @@ class ObjectCode{
   }
 
   ObjectCode.fromMap(Map map){
-    code = map[columCode] as int;
-    chapterNo = map[chapterTName] as int;
-    partNo = map[partTName] as int;
-    typeNo = map[typeTName] as int;
-    itemNo = map[itemTName] as int;
+    code = map[ObjCodeConstants.columCode] as int;
+    chapterNo = map[ObjCodeConstants.chapterTName] as int;
+    partNo = map[ObjCodeConstants.partTName] as int;
+    typeNo = map[ObjCodeConstants.typeTName] as int;
+    itemNo = map[ObjCodeConstants.itemTName] as int;
 
   }
 
   Map toMap(){
     Map map = <String,Object>{};
-    map[columCode]=code;
-    map[chapterTName]=chapterNo;
-    map[partTName]=partNo;
-    map[typeTName]=typeNo;
-    map[itemTName]=itemNo;
+    map[ObjCodeConstants.columCode]=code;
+    map[ObjCodeConstants.chapterTName]=chapterNo;
+    map[ObjCodeConstants.partTName]=partNo;
+    map[ObjCodeConstants.typeTName]=typeNo;
+    map[ObjCodeConstants.itemTName]=itemNo;
     return map;
   }
 
@@ -43,16 +43,16 @@ class DOCChapter{
   DOCChapter({this.number,this.name});
 
   DOCChapter.fromMap(Map<String,Object> map){
-    number = map[columNo] as int;
-    name = map[columName].toString();
+    number = map[ObjCodeConstants.columNo] as int;
+    name = map[ObjCodeConstants.columName].toString();
   }
 
   Map<String,Object> toMap(){
     Map<String,Object> map = <String,Object>{};
     if(number != null){
-      map[columNo]=number!;
+      map[ObjCodeConstants.columNo]=number!;
     }if(name != null){
-      map[columName]=name!;
+      map[ObjCodeConstants.columName]=name!;
     }
     return map;
   }
@@ -62,24 +62,24 @@ class DOCPart{
   int? parentNo;
   String? name;
   
-  DOCPart({this.number,this.name});
+  DOCPart({this.number,this.parentNo,this.name});
 
   DOCPart.fromMap(Map<String,Object> map){
-    number = map[columNo] as int;
-    parentNo = map[columParentNo] as int;
-    name = map[columName].toString();
+    number = map[ObjCodeConstants.columNo] as int;
+    parentNo = map[ObjCodeConstants.columParentNo] as int;
+    name = map[ObjCodeConstants.columName].toString();
   }
 
   Map<String,Object> toMap(){
     Map<String,Object> map = <String,Object>{};
     if(number != null){
-      map[columNo]=number!;
+      map[ObjCodeConstants.columNo]=number!;
     }
     if(parentNo != null){
-      map[columParentNo]=parentNo!;
+      map[ObjCodeConstants.columParentNo]=parentNo!;
     }
     if(name != null){
-      map[columName]=name!;
+      map[ObjCodeConstants.columName]=name!;
     }
     return map;
   }
@@ -89,24 +89,24 @@ class DOCType{
   int? parentNo;
   String? name;
 
-  DOCType({this.number,this.name});
+  DOCType({this.number,this.parentNo,this.name});
 
   DOCType.fromMap(Map<String,Object> map){
-    number = map[columNo] as int;
-    parentNo = map[columParentNo] as int;
-    name = map[columName].toString();
+    number = map[ObjCodeConstants.columNo] as int;
+    parentNo = map[ObjCodeConstants.columParentNo] as int;
+    name = map[ObjCodeConstants.columName].toString();
   }
 
   Map<String,Object> toMap(){
     Map<String,Object> map = <String,Object>{};
     if(number != null){
-      map[columNo]=number!;
+      map[ObjCodeConstants.columNo]=number!;
     }
     if(parentNo != null){
-      map[columParentNo]=parentNo!;
+      map[ObjCodeConstants.columParentNo]=parentNo!;
     }
     if(name != null){
-      map[columNo]=name!;
+      map[ObjCodeConstants.columNo]=name!;
     }
     return map;
   }
@@ -116,24 +116,24 @@ class DOCItem{
   int? parentNo;
   String? name;
 
-  DOCItem({this.number,this.name});
+  DOCItem({this.number,this.parentNo,this.name});
 
   DOCItem.fromMap(Map<String,Object> map){
-    number = map[columNo] as int;
-    parentNo = map[columParentNo] as int;
-    name = map[columName].toString();
+    number = map[ObjCodeConstants.columNo] as int;
+    parentNo = map[ObjCodeConstants.columParentNo] as int;
+    name = map[ObjCodeConstants.columName].toString();
   }
   
   Map<String,Object> toMap(){
     Map<String,Object> map = <String,Object>{};
     if(number != null){
-      map[columNo]=number!;
+      map[ObjCodeConstants.columNo]=number!;
     }
     if(parentNo != null){
-      map[columParentNo]=parentNo!;
+      map[ObjCodeConstants.columParentNo]=parentNo!;
     }
     if(name != null){
-      map[columNo]=name!;
+      map[ObjCodeConstants.columNo]=name!;
     }
     return map;
   }

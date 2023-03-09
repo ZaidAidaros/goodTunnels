@@ -6,15 +6,15 @@ class OrganizationMH{
   DBHelper dbHelper = DBHelper();
 
   createOrganization(OrganizationM organizationM){
-    dbHelper.insertData(organizationTableName, organizationM.toMap());
+    dbHelper.insertData(CodingBlockConst.orgTableName, organizationM.toMap());
   }
   updateOrganization(OrganizationM organizationM){
-    dbHelper .upDateData(organizationTableName, organizationM.toMap(),
-    columCode,organizationM.toMap()[columCode]);
+    dbHelper .upDateData(CodingBlockConst.orgTableName, organizationM.toMap(),
+    CodingBlockConst.columCode,organizationM.toMap()[CodingBlockConst.columCode]);
   }
   getAllOrg()async{
     List<OrganizationM> list =[];
-    await dbHelper.getData(organizationTableName).then((value) {
+    await dbHelper.getData(CodingBlockConst.orgTableName).then((value) {
       for (var element in value) { 
         list.add(OrganizationM.fromMap(element));
       }

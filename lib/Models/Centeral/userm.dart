@@ -1,5 +1,4 @@
-import 'package:goodtunnels/Core/Constants/objectcode_constants.dart';
-import 'package:goodtunnels/Core/Constants/subcommitment_constants.dart';
+
 import 'package:goodtunnels/Core/Constants/user_const.dart';
 
 class UserM{
@@ -8,17 +7,17 @@ class UserM{
   String? password;
   
   UserM.fromMap(Map map){
-    id = map[columUId];
-    name = map[columName];
-    password = map[columPass];
+    id = map[UserConstants.columUId];
+    name = map[UserConstants.columName];
+    password = map[UserConstants.columPass];
   }
 
   toMap(){
     Map<String,Object> map = <String,Object>{};
     if(id!=null){
-      map[columUId] = id!;
-      map[columName] = name.toString();
-      map[columPass] = password.toString();
+      map[UserConstants.columUId] = id!;
+      map[UserConstants.columName] = name.toString();
+      map[UserConstants.columPass] = password.toString();
     }
   }
 }

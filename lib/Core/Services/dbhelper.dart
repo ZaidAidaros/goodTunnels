@@ -61,6 +61,12 @@ class DBHelper{
    List<Map<String,Object?>> list = await myDb!.query(table,where:'$columN = ?',whereArgs: [columV] );
    return list.first;
   }
+  // get rows where
+ Future<List<Map<String,Object?>>> getDataWhere(String table,String columN, var columV)async{
+    Database? myDb = await db;
+   List<Map<String,Object?>> list = await myDb!.query(table,where:'$columN = ?',whereArgs: [columV] );
+   return list;
+  }
   // Search for string colum strart with my value in all rows
  Future<List<Map<String,Object?>>> SearchStartWith(String table,String columN, String columV)async{
     Database? myDb = await db;
