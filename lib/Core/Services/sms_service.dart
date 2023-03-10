@@ -13,15 +13,6 @@ class SMSService{
    final t = Tashfeer();
    
 
-  // sendSMSTelephon(String msg)async{
-  //   await _telephony.sendSms(
-  //     to: _address, message: msg,
-  //     statusListener: (status) {
-        
-  //     },
-  //   );
-  // }
-
 
   //sms_advanced.SimCard? simCard;
   ////send sms msg

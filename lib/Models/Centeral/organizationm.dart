@@ -1,39 +1,34 @@
-import 'package:goodtunnels/Core/Constants/codingblock_constants.dart';
+import '../../Core/Constants/CenConst/OrgConstants.dart';
 
-class OrganizationM{
+class OrganizationM {
   int? code;
-  int? userId;
   String? name;
-  String? address;
+  String? phone;
   String? k;
   String? iv;
 
+  OrganizationM.fromMap(Map<String, Object?> map) {
+    code = map[OrgConst.columCode] as int;
 
-    OrganizationM.fromMap(Map<String,Object?> map){
-    code = map[CodingBlockConst.columCode] as int;
-    userId = map[CodingBlockConst.columUId] as int;
-    name = map[CodingBlockConst.columName].toString();
-    address = map[CodingBlockConst.columName].toString();
-    k=map[CodingBlockConst.columK].toString();
-    iv=map[CodingBlockConst.columiv].toString();
+    name = map[OrgConst.columName].toString();
+    phone = map[OrgConst.columName].toString();
+    k = map[OrgConst.columK].toString();
+    iv = map[OrgConst.columiv].toString();
   }
 
-  Map<String,Object> toMap(){
-    Map<String,Object> map = <String,Object>{};
-    if(code != null){
-      map[CodingBlockConst.columCode]=code!;
+  Map<String, Object> toMap() {
+    Map<String, Object> map = <String, Object>{};
+    if (code != null) {
+      map[OrgConst.columCode] = code!;
     }
-    if(userId != null){
-      map[CodingBlockConst.columUId]=userId!;
+    if (name != null) {
+      map[OrgConst.columName] = name!;
     }
-    if(name != null){
-      map[CodingBlockConst.columName]=name!;
+    if (k != null) {
+      map[OrgConst.columK] = k!;
     }
-    if(k != null){
-      map[CodingBlockConst.columK]=k!;
-    }
-    if(iv != null){
-      map[CodingBlockConst.columiv]=iv!;
+    if (iv != null) {
+      map[OrgConst.columiv] = iv!;
     }
     return map;
   }

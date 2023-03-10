@@ -1,26 +1,36 @@
-import 'package:goodtunnels/Core/Constants/codingblock_constants.dart';
+import 'package:goodtunnels/Core/Constants/SharedConst/CodingBlock/codingblock_constants.dart';
 import 'package:goodtunnels/Core/Services/dbhelper.dart';
 import 'package:goodtunnels/Models/Centeral/organizationm.dart';
+
+import '../../Core/Constants/CenConst/OrgConstants.dart';
 
 class OrganizationMH{
   DBHelper dbHelper = DBHelper();
 
   createOrganization(OrganizationM organizationM){
-    dbHelper.insertData(CodingBlockConst.orgTableName, organizationM.toMap());
+    dbHelper.insertData(CodingBlockConst.columOrgCode, organizationM.toMap());
   }
   updateOrganization(OrganizationM organizationM){
-    dbHelper .upDateData(CodingBlockConst.orgTableName, organizationM.toMap(),
+    dbHelper .upDateData(CodingBlockConst.columOrgCode, organizationM.toMap(),
     CodingBlockConst.columCode,organizationM.toMap()[CodingBlockConst.columCode]);
   }
   getAllOrg()async{
     List<OrganizationM> list =[];
-    await dbHelper.getData(CodingBlockConst.orgTableName).then((value) {
+    await dbHelper.getData(CodingBlockConst.columOrgCode).then((value) {
       for (var element in value) { 
         list.add(OrganizationM.fromMap(element));
       }
     });
     return list;
   }
+
+    Future<OrganizationM?> getOrgByPhone(String phone)async{
+    return await dbHelper.getDataWhere(
+      OrgConst.orgTableName,
+      OrgConst.columOrgPhone,
+      phone
+    ).then((value) => OrganizationM.fromMap(value.first));
+    }
 
   //search not complate
   searchForOrg()async{

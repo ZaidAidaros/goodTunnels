@@ -12,7 +12,7 @@ static const String columSubmitDate = "SubmitDate";
 static const String columSubmitRejResn = "rejectResen";
 
 
-static const String sqlCreateSubCommitmentTable=
+static const String sqlCreateCommitmentTable=
 '''CREATE TABLE "$commitTableNamt" (
       "$columReqNo" INTEGER NOT NULL PRIMARY KEY,
       "$columCodinBlocCode" INTEGER NOT NULL,
