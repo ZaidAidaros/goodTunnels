@@ -7,7 +7,7 @@ class SubCommitmentMH{
 
   DBHelper dbHelper = DBHelper();
 
-  createSubCommitment(SubCommitmentM subCommitmentM){
+  newSubCommitment(SubCommitmentM subCommitmentM){
     dbHelper.insertData(SubCommitConst.subCommitTableName, subCommitmentM.toMap());
   }
   updateSubCommitment(SubCommitmentM subCommitmentM){

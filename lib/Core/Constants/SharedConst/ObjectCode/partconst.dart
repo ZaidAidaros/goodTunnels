@@ -7,7 +7,7 @@ class PartConst {
   static const String sqlCreatePartTable = '''CREATE TABLE "$partTName" (
       "$columNo" INTEGER NOT NULL PRIMARY KEY,
       "$columChapterCode" INTEGER NOT NULL,
-      "$columName" TEXT NOT NULL,
+      "$columName" TEXT NOT NULL
     )
 ''';
 }

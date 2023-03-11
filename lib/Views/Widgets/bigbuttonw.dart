@@ -21,7 +21,10 @@ class BigButtonWidget extends StatelessWidget {
         child: Text(
           title,
           style: const TextStyle(
-              fontSize: 24, fontWeight: FontWeight.bold, fontFamily: "Cairo"),
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            //fontFamily: "Cairo",
+          ),
         ),
       ),
     );

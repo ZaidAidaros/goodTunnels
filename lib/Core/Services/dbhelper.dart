@@ -1,8 +1,8 @@
+import 'package:get/get.dart';
 import 'package:goodtunnels/Core/Services/settingservices.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-
-import '../Constants/dbConstants.dart';
+import '../Constants/dbconstants.dart';
 
 class DBHelper {
   static Database? _db;
@@ -13,22 +13,18 @@ class DBHelper {
   }
 
   initDb() async {
-    print("Init DataBase============");
     String path = join(await getDatabasesPath(), 'goodtunnels.db');
-    print("DataBase path=>$path **============");
-    Database dB = await openDatabase(path, onCreate: _onCreate);
+    Database dB = await openDatabase(path, onCreate: _onCreate,version: 1);
     return dB;
   }
 
   _onCreate(Database database, int version) async {
-    print("======OnCreate DataBase======");
-    bool? iscen = SettingServices().getBool("isCen");
-    if (iscen == true) {
+    if (Get.find<SettingServices>().getIsCen() == true) {
       for (var element in DBConstants.cenSqlOncreat) {
         await database.execute(element);
       }
     }
-    if (iscen == false) {
+    if (Get.find<SettingServices>().getIsCen() == false) {
       for (var element in DBConstants.deCenSqlOncreat) {
         await database.execute(element);
       }
@@ -42,9 +38,9 @@ class DBHelper {
   }
 
   // insert new row
-  insertData(String table, Map<String, Object?> values) async {
+  Future<int> insertData(String table, Map<String, Object?> values) async {
     Database? myDb = await db;
-    await myDb!.insert(table, values);
+   return await myDb!.insert(table, values);
   }
 
   // update a row
@@ -89,7 +85,7 @@ class DBHelper {
       String columN1, String columN2, var columV1, var columV2) async {
     Database? myDb = await db;
     List<Map<String, Object?>> list = await myDb!.query(table,
-        where: '"$columN1" = ? AND "$columN2"', whereArgs: [columV1, columV2]);
+        where: '"$columN1" = ? AND "$columN2" = ?', whereArgs: [columV1, columV2]);
     return list;
   }
 

@@ -8,7 +8,7 @@ class TypeConst{
 '''CREATE TABLE "$typeTName" (
       "$columNo" INTEGER NOT NULL PRIMARY KEY,
       "$columPartCode" INTEGER NOT NULL,
-      "$columName" TEXT NOT NULL,
+      "$columName" TEXT NOT NULL
     )
 ''';
 }

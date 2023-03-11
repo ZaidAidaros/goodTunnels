@@ -5,7 +5,7 @@ class ChapterConst {
 
   static const String sqlCreateChapterTable = '''CREATE TABLE "$chapterTName" (
       "$columNo" INTEGER NOT NULL PRIMARY KEY,
-      "$columName" TEXT NOT NULL,
+      "$columName" TEXT NOT NULL
     )
 ''';
 }

@@ -16,7 +16,7 @@ static const String sqlCreateObjectCodeTable=
       "$columChapterCode" INTEGER NOT NULL,
       "$columPartCode" INTEGER NOT NULL,
       "$columTypeCode" INTEGER NOT NULL,
-      "$columItemCode" INTEGER NOT NULL,
+      "$columItemCode" INTEGER NOT NULL
     )
 ''';
 

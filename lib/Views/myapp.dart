@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:goodtunnels/Controllers/SharedControllers/logincontroller.dart';
 
 import '../Core/Constants/Pages/getpages.dart';
 
@@ -8,9 +9,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.lazyPut(() => LoginContorller());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: AppPages.loginPage,
+      //initialBinding: ,
+      initialRoute: AppPages.logIn,
       getPages: AppPages.getPages,
     );
   }

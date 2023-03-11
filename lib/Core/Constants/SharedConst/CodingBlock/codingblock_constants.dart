@@ -12,7 +12,7 @@ static const String sqlCreateCodingBlockTable=
       "$columCode" INTEGER NOT NULL PRIMARY KEY,
       "$columOrgCode" INTEGER NOT NULL,
       "$columProjCode" INTEGER NOT NULL,
-      "$columFoundCode" INTEGER NOT NULL,
+      "$columFoundCode" INTEGER NOT NULL
     )
 ''';
 

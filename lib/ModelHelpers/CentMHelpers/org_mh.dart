@@ -2,7 +2,7 @@ import 'package:goodtunnels/Core/Constants/SharedConst/CodingBlock/codingblock_c
 import 'package:goodtunnels/Core/Services/dbhelper.dart';
 import 'package:goodtunnels/Models/Centeral/organizationm.dart';
 
-import '../../Core/Constants/CenConst/OrgConstants.dart';
+import '../../Core/Constants/CenConst/orgconstants.dart';
 
 class OrganizationMH{
   DBHelper dbHelper = DBHelper();
@@ -29,7 +29,13 @@ class OrganizationMH{
       OrgConst.orgTableName,
       OrgConst.columOrgPhone,
       phone
-    ).then((value) => OrganizationM.fromMap(value.first));
+    ).then((value){
+      if(value.isNotEmpty){
+       return OrganizationM.fromMap(value.first);
+      }else{
+        return null;
+      }
+    });
     }
 
   //search not complate

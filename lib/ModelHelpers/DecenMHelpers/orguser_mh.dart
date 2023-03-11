@@ -6,25 +6,24 @@ import '../../Core/Services/dbhelper.dart';
 import '../../Models/Decenteral/orguserm.dart';
 
 class OrgUserMH {
-  DBHelper dbHelper = DBHelper();
+  final DBHelper _dbHelper = DBHelper();
 
-  static late final OrgUserM? orgUserM;
 
   insertSetting(OrgUserM settingsM) {
-    dbHelper.insertData(OrgUserConst.orguserTName, settingsM.toMap());
+    _dbHelper.insertData(OrgUserConst.orguserTName, settingsM.toMap());
   }
 
   updateSetting(OrgUserM settingsM, String updateColum) {
-    dbHelper.upDateData(
+    _dbHelper.upDateData(
         OrgUserConst.orguserTName,
         settingsM.toMap(),
         OrgUserConst.columOrgName,
         settingsM.toMap()[OrgUserConst.columOrgCode]);
   }
 
-  Future<List<OrgUserM>> getAllSetting() async {
+  Future<List<OrgUserM>> getAllOrgUsers() async {
     List<OrgUserM> list = [];
-    await dbHelper.getData(OrgUserConst.orguserTName).then((value) {
+    await _dbHelper.getData(OrgUserConst.orguserTName).then((value) {
       for (var element in value) {
         list.add(OrgUserM.fromMap(element));
       }
@@ -32,13 +31,9 @@ class OrgUserMH {
     return list;
   }
 
-  Future<OrgUserM> search(String settingKey) async {
-    return OrgUserM.fromMap(await dbHelper.getDataOne(
-        OrgUserConst.orguserTName, OrgUserConst.columOrgName, settingKey));
-  }
 
   Future<bool> logIn(String name, String password) async {
-    return await dbHelper
+    return await _dbHelper
         .getDataWhereWithAnd(
             OrgUserConst.orguserTName,
             OrgUserConst.columOrgUName,

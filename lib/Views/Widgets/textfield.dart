@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class TextFFieldWidget extends StatelessWidget {
   const TextFFieldWidget({super.key, this.textEditingController, this.prefixIcon, this.label, this.hint});
@@ -18,7 +16,8 @@ class TextFFieldWidget extends StatelessWidget {
           fillColor: Colors.white,
           prefixIcon: Icon(prefixIcon),
           hintText: hint,
-          labelText: label,
+          labelStyle:TextStyle(color: Colors.blue,fontSize: 20) ,
+          labelText:label ,
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
               borderSide: const BorderSide(width: 10, color: Colors.red))),

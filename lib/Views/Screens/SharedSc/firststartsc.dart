@@ -11,24 +11,20 @@ class FirstStartSc extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: DecoratedBox(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("images/backgroung.png"), fit: BoxFit.cover),
+      body: GetBuilder<FirstStartController>(
+        init: FirstStartController(),
+        builder: (controller) => Column(children: [
+          const AssetImageWidget(image: "images/logo.png"),
+          BigButtonWidget(
+            title: "الفرع الرئيسي",
+            onTap:()=> controller.nextPageAsCen(),
           ),
-          child: GetBuilder<FirstStartController>(
-            builder: (controller) => Column(children: [
-              const AssetImageWidget(image: "images/logo.png"),
-              BigButtonWidget(
-                title: "الفرع الرئيسي",
-                onTap: controller.nextPageAsCen(),
-              ),
-              BigButtonWidget(
-                title: "فرع",
-                onTap: controller.nextPageAsDeCen(),
-              )
-            ]),
-          )),
+          BigButtonWidget(
+            title: "فرع",
+            onTap:()=>  controller.nextPageAsDeCen(),
+          )
+        ]),
+      ),
     );
   }
 }

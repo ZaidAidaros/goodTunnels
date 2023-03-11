@@ -1,4 +1,4 @@
-import '../../Core/Constants/CenConst/OrgConstants.dart';
+import '../../Core/Constants/CenConst/orgconstants.dart';
 
 class OrganizationM {
   int? code;

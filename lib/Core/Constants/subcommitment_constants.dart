@@ -12,7 +12,7 @@ static const String columDescription = "description";
 static const String columSpendingAmount = "amount";
 static const String columBalanceAfter = "balanceAfter";
 static const String columExpectedPayDate = "expectedPayDate";
-static const String columIsApproved = "expectedPayDate";
+static const String columIsApproved = "isApproved";
  static const String columSubmitRejResn = "rejectResen";
 
 static const String sqlCreateSubCommitmentTable=
@@ -25,8 +25,7 @@ static const String sqlCreateSubCommitmentTable=
       "$columBalanceAfter" INTEGER NOT NULL,
       "$columIsApproved" INTEGER NOT NULL,
       "$columExpectedPayDate" TEXT NOT NULL,
-      "$columDescription" TEXT NOT NULL,
-      "$columDescription" TEXT
+      "$columDescription" TEXT NOT NULL
       
     )
 ''';

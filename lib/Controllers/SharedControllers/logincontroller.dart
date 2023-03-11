@@ -8,12 +8,8 @@ class LoginContorller extends GetxController {
   TextEditingController userNameTextController = TextEditingController();
   TextEditingController userPassTextController = TextEditingController();
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
 
-  onLogin() async {
+  login() async {
     await Get.find<SettingServices>()
         .login(
       userNameTextController.text,
@@ -21,7 +17,7 @@ class LoginContorller extends GetxController {
     )
         .then((value) {
       if (value == true) {
-        Get.offAll(AppPages.homePage);
+        Get.offAllNamed(AppPages.homePage);
       } else {
         Get.defaultDialog(
           title: "Error:",

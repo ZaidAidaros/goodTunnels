@@ -7,7 +7,7 @@ class ItemConst {
   static const String sqlCreateItemTable = '''CREATE TABLE "$itemTName" (
       "$columNo" INTEGER NOT NULL PRIMARY KEY,
       "$columTypeCode" INTEGER NOT NULL,
-      "$columName" TEXT NOT NULL,
+      "$columName" TEXT NOT NULL
     )
 ''';
 }

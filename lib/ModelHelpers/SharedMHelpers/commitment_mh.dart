@@ -4,23 +4,24 @@ import 'package:goodtunnels/Models/SharedModels/commitment.dart';
 
 class CommitmentMH{
 
-  DBHelper dbHelper = DBHelper();
+  final DBHelper _dbHelper = DBHelper();
 
-  createCommitment(CommitmentM commitmentM){
-    dbHelper.insertData(CommitConst.commitTableNamt, commitmentM.toMap());
+  Future<int> newCommitment(CommitmentM commitmentM){
+    commitmentM.isApproved=0;
+   return _dbHelper.insertData(CommitConst.commitTableNamt, commitmentM.toMap());
   }
   updateCommitment(CommitmentM commitmentM){
-    dbHelper .upDateData(CommitConst.commitTableNamt, commitmentM.toMap(),
+    _dbHelper .upDateData(CommitConst.commitTableNamt, commitmentM.toMap(),
     CommitConst.columReqNo,commitmentM.toMap()[CommitConst.columReqNo]);
   }
     approveCommitment(CommitmentM commitmentM){
       commitmentM.isApproved=1;
-    dbHelper .upDateData(CommitConst.commitTableNamt, commitmentM.toMap(),
+    _dbHelper .upDateData(CommitConst.commitTableNamt, commitmentM.toMap(),
     CommitConst.columReqNo,commitmentM.toMap()[CommitConst.columReqNo]);
   }
   getAllCommitments()async{
     List<CommitmentM> list =[];
-    await dbHelper.getData(CommitConst.commitTableNamt).then((value) {
+    await _dbHelper.getData(CommitConst.commitTableNamt).then((value) {
       for (var element in value) { 
         list.add(CommitmentM.fromMap(element));
       }
@@ -29,7 +30,7 @@ class CommitmentMH{
   }
   getCommitNotApproved()async{
     List<CommitmentM> list =[];
-    await dbHelper.getDataWhere(CommitConst.commitTableNamt,CommitConst.columIsApproved,0).then((value) {
+    await _dbHelper.getDataWhere(CommitConst.commitTableNamt,CommitConst.columIsApproved,0).then((value) {
       for (var element in value) { 
         list.add(CommitmentM.fromMap(element));
       }
@@ -38,7 +39,7 @@ class CommitmentMH{
   }
   getCommitApproved()async{
     List<CommitmentM> list =[];
-    await dbHelper.getDataWhere(CommitConst.commitTableNamt,
+    await _dbHelper.getDataWhere(CommitConst.commitTableNamt,
     CommitConst.columIsApproved,1).then((value) {
       for (var element in value) { 
         list.add(CommitmentM.fromMap(element));
