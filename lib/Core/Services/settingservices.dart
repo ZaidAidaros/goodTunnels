@@ -8,6 +8,8 @@ import 'package:goodtunnels/ModelHelpers/SharedMHelpers/commitment_mh.dart';
 import 'package:goodtunnels/ModelHelpers/SharedMHelpers/subcommit_mh.dart';
 import 'package:goodtunnels/Models/Decenteral/orguserm.dart';
 import 'package:telephony/telephony.dart';
+import '../../Controllers/SharedControllers/firststartcontroller.dart';
+import '../../Controllers/SharedControllers/logincontroller.dart';
 import '../../ModelHelpers/CentMHelpers/user_mh.dart';
 import '../../ModelHelpers/DecenMHelpers/orguser_mh.dart';
 import '../../Models/Centeral/userm.dart';
@@ -16,9 +18,11 @@ import '../Constants/opcodeconst.dart';
 
 // init setting services
 Future initServices() async {
-  await GetStorage.init();
-  Get.put(() => SettingServices(), permanent: true);
+  Get.lazyPut(() => SettingServices(), fenix: true);
+  Get.lazyPut(() => FirstStartController());
+  Get.lazyPut(() => LoginContorller());
   receiveSmsListener();
+  await GetStorage.init();
 }
 
 class SettingServices extends GetxService {

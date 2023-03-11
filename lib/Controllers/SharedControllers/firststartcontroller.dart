@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:goodtunnels/Core/Services/settingservices.dart';
-import 'package:goodtunnels/Views/Screens/Auth/loginsc.dart';
+
+import '../../Core/Constants/Pages/getpages.dart';
 
 class FirstStartController extends GetxController {
   //
@@ -10,7 +11,7 @@ class FirstStartController extends GetxController {
         middleText: "Are Sure ,you are center",
         onConfirm: () {
           Get.find<SettingServices>().storeIsCen(true);
-          Get.offAll(const LogInSc());
+          Get.offAllNamed(AppPages.logIn);
         },
         onCancel: () {},
         barrierDismissible: false);
@@ -22,7 +23,7 @@ class FirstStartController extends GetxController {
         middleText: "Are Sure",
         onConfirm: () async {
           Get.find<SettingServices>().storeIsCen(false);
-          Get.offAll(const LogInSc());
+          Get.offAllNamed(AppPages.logIn);
         },
         onCancel: () {},
         barrierDismissible: false);

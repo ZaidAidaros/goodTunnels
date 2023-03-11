@@ -37,8 +37,8 @@ class AppPages {
   // as branch
   static const String brancheHome = "/brancheHomeSc";
   static const String newCommitment = "/newCommitmentSc";
-  static const String commitments = "commitmentsSc";
-  static const String commitmentInfo = "commitmentInfoSc";
+  static const String commitments = "/commitmentsSc";
+  static const String commitmentInfo = "/commitmentInfoSc";
   static const String newSubCommitment = "/newSubCommitmentSc";
 
   static const String settings = "/settingsSc";

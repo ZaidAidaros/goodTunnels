@@ -21,7 +21,7 @@ static const String orguserTName="OrgUsers";
       "$columOrgUName" TEXT NOT NULL,
       "$columOrgUPass" TEXT NOT NULL,
       "$columTashKey" TEXT NOT NULL,
-      "$columTashIkey" TEXT NOT NULL,
+      "$columTashIkey" TEXT NOT NULL
     )
 ''';
 

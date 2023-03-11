@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut(() => LoginContorller());
+    
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       //initialBinding: ,

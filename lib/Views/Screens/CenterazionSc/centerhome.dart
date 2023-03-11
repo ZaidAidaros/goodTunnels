@@ -7,6 +7,7 @@ class CenterHomeSc extends GetView<CenHomeController> {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(CenHomeController());
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Scaffold(
@@ -133,10 +134,7 @@ class CenterHomeSc extends GetView<CenHomeController> {
                               ),
                               textAlign: TextAlign.center,
                             ),
-                            onTap: () {
-                              Navigator.of(context)
-                                  .pushReplacementNamed("ComeingRequest");
-                            },
+                            onTap: () =>controller.goToIncomingReq(),
                           ),
                         ),
                       ],
