@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
+import 'package:goodtunnels/Controllers/CenterControllers/brancheinfosccontroller.dart';
 import 'package:goodtunnels/Views/Widgets/BranchBoxElementWidget.dart';
 
 import '../../../Core/Constants/Pages/getpages.dart';
@@ -8,11 +10,12 @@ import '../../../Core/Constants/TitlesConstTexts.dart';
 import '../../Widgets/BoxHomPage.dart';
 import '../../Widgets/MainDrawerwidget.dart';
 
-class BrancheInfoSc extends StatelessWidget {
+class BrancheInfoSc extends GetView<BrancheInfoScController> {
   const BrancheInfoSc({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Get.put(BrancheInfoScController());
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Scaffold(
@@ -37,8 +40,8 @@ class BrancheInfoSc extends StatelessWidget {
               children: [
                 Container(
                   child: BranchBoxElement(
-                    BanchName: "Basel",
-                    PhoneNumber: "773216193",
+                    BanchName: controller.organizationM.name,
+                    PhoneNumber: controller.organizationM.phone,
                   ),
                 ),
                 Container(
