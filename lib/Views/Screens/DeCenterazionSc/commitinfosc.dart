@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:goodtunnels/Core/Constants/Pages/getpages.dart';
 import 'package:goodtunnels/Core/Constants/TitlesConstTexts.dart';
+import 'package:goodtunnels/Core/Constants/subcommitment_constants.dart';
 import 'package:goodtunnels/Views/Widgets/MainDrawerwidget.dart';
 
+import '../../../Controllers/SharedControllers/commitinfosccontroller.dart';
 import '../../Widgets/comingrquestbox.dart';
 
-class CommitInfoSc extends StatelessWidget {
+class CommitInfoSc extends GetView<CommitInfoScController> {
   const CommitInfoSc({super.key});
 
   @override

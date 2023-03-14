@@ -9,7 +9,6 @@ class OrganizationM {
 
   OrganizationM.fromMap(Map<String, Object?> map) {
     code = map[OrgConst.columCode] as int;
-
     name = map[OrgConst.columName].toString();
     phone = map[OrgConst.columName].toString();
     k = map[OrgConst.columK].toString();

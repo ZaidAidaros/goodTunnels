@@ -49,7 +49,7 @@ class MainDrawerWidget extends StatelessWidget {
               title: "${TitlesConstText.Setteings}",
               icon: Icon(Icons.settings),
               onTap: () {
-                Navigator.of(context).pushReplacementNamed("MainSettings");
+                Navigator.of(context).pushReplacementNamed(AppPages.settings);
               },
             ),
             ListTitleSubDrawer(

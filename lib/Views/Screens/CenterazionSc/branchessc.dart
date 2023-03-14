@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:goodtunnels/Controllers/CenterControllers/branchescontroller.dart';
 import 'package:goodtunnels/Core/Constants/Pages/getpages.dart';
 import 'package:goodtunnels/Core/Constants/TitlesConstTexts.dart';
 import 'package:goodtunnels/Views/Widgets/BranchBoxElementWidget.dart';
 import 'package:goodtunnels/Views/Widgets/MainDrawerwidget.dart';
 
-class BranchesSc extends StatelessWidget {
+class BranchesSc extends GetView<BranchesScController> {
   const BranchesSc({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Get.put(BranchesScController());
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Scaffold(
@@ -66,14 +69,13 @@ class BranchesSc extends StatelessWidget {
           ),
           drawer: MainDrawerWidget(),
           body: ListView.builder(
-              itemCount: 5,
+              itemCount: controller.orgList.length,
               itemBuilder: (context, i) {
                 return BranchBoxElement(
-                  BanchName: "Basel",
-                  PhoneNumber: "773216193",
+                  BanchName: controller.orgList[i].name,
+                  PhoneNumber: controller.orgList[i].phone,
                   onTap: () {
-                    Navigator.of(context)
-                        .pushReplacementNamed(AppPages.brancheInfo);
+                    controller.goToBranchinfo(controller.orgList[i]);
                   },
                 );
               })),

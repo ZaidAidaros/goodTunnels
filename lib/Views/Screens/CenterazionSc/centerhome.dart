@@ -122,7 +122,7 @@ class CenterHomeSc extends GetView<CenHomeController> {
                             ),
                             onTap: () {
                               Navigator.of(context)
-                                  .pushReplacementNamed("MainSettings");
+                                  .pushReplacementNamed(AppPages.settings);
                             },
                           ),
                         ),
