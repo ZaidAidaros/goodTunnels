@@ -2,18 +2,19 @@ import 'package:get/get.dart';
 import 'package:goodtunnels/Views/Screens/Auth/loginsc.dart';
 import 'package:goodtunnels/Views/Screens/CenterazionSc/brancheinfosc.dart';
 import 'package:goodtunnels/Views/Screens/CenterazionSc/branchesettingsc.dart';
+import 'package:goodtunnels/Views/Screens/CenterazionSc/branchessc.dart';
 import 'package:goodtunnels/Views/Screens/CenterazionSc/censettingsc.dart';
 import 'package:goodtunnels/Views/Screens/CenterazionSc/centerhome.dart';
 import 'package:goodtunnels/Views/Screens/CenterazionSc/incomingreqsc.dart';
 import 'package:goodtunnels/Views/Screens/CenterazionSc/newbranchesc.dart';
 import 'package:goodtunnels/Views/Screens/CenterazionSc/newprojectsc.dart';
 import 'package:goodtunnels/Views/Screens/DeCenterazionSc/commitinfosc.dart';
-import 'package:goodtunnels/Views/Screens/DeCenterazionSc/commitmentssc.dart';
 import 'package:goodtunnels/Views/Screens/DeCenterazionSc/branchehomesc.dart';
 import 'package:goodtunnels/Views/Screens/DeCenterazionSc/newcommitsc.dart';
 import 'package:goodtunnels/Views/Screens/DeCenterazionSc/newsubcommitsc.dart';
 import 'package:goodtunnels/Views/Screens/SharedSc/firststartsc.dart';
 
+import '../../../Views/Screens/SharedSc/commitmentssc.dart';
 import 'appmiddelware.dart';
 
 class AppPages {
@@ -33,7 +34,7 @@ class AppPages {
   static const String newProject = "/newProjectSc";
   //
   static const String cenSettings = "/cenSettingsSc";
-  
+
   // as branch
   static const String brancheHome = "/brancheHomeSc";
   static const String newCommitment = "/newCommitmentSc";
@@ -42,7 +43,6 @@ class AppPages {
   static const String newSubCommitment = "/newSubCommitmentSc";
 
   static const String settings = "/settingsSc";
-
 
   static List<GetPage<dynamic>> getPages = [
     // shared
@@ -67,7 +67,7 @@ class AppPages {
     ),
     GetPage(
       name: branches,
-      page: () => const CenterHomeSc(),
+      page: () => const BranchesSc(),
     ),
     GetPage(
       name: brancheInfo,

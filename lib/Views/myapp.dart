@@ -9,9 +9,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 62, 82, 146),
+        fontFamily: "Cairo",
+      ),
       //initialBinding: ,
       initialRoute: AppPages.logIn,
       getPages: AppPages.getPages,

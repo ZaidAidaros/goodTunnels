@@ -17,14 +17,27 @@ class FirstStartSc extends StatelessWidget {
           const AssetImageWidget(image: "images/logo.png"),
           BigButtonWidget(
             title: "الفرع الرئيسي",
-            onTap:()=> controller.nextPageAsCen(),
+            onTap: () => controller.nextPageAsCen(),
           ),
           BigButtonWidget(
             title: "فرع",
-            onTap:()=>  controller.nextPageAsDeCen(),
+            onTap: () => controller.nextPageAsDeCen(),
           )
         ]),
       ),
     );
   }
 }
+
+//  CommitmentWidget(
+//                         commiReqNo: 577568856587,
+//                         reqAdminUint: "Basel dkjhs",
+//                         authEntity: "dssgsgsgsgfsd",
+//                         authOfficer: "skdndskn",
+//                         submitDate: "2023/20/11",
+//                         forDuration: "1Q",
+//                         onTap: () {
+//                           Navigator.of(context)
+//                               .pushReplacementNamed(AppPages.commitmentInfo);
+//                         },
+//                       ),
