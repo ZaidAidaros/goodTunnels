@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
         fontFamily: "Cairo",
       ),
       //initialBinding: ,
-      initialRoute: AppPages.logIn,
-      getPages: AppPages.getPages,
-      // home: NewCommitSc(),
+      // initialRoute: AppPages.logIn,
+      // getPages: AppPages.getPages,
+      home: NewCommitSc(),
     );
   }
 }
