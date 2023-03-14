@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:goodtunnels/Controllers/SharedControllers/logincontroller.dart';
+import 'package:goodtunnels/Views/Screens/DeCenterazionSc/newcommitsc.dart';
 
 import '../Core/Constants/Pages/getpages.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       //initialBinding: ,
       initialRoute: AppPages.logIn,
       getPages: AppPages.getPages,
+      // home: NewCommitSc(),
     );
   }
 }
