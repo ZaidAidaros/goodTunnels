@@ -56,138 +56,41 @@ class NewCommitSc extends StatelessWidget {
                     title: "${CommitConstTexts.commitForDuration}",
                     hintText: " Enter Date .. ",
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        height: 140,
-                        width: 330,
-                        padding: EdgeInsets.symmetric(horizontal: 5),
-                        child: Form(
-                            child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text(
-                              "${CommitConstTexts.comitFound}",
-                              style: TextStyle(
-                                  fontSize: 22,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Container(
-                              width: double.infinity,
-                              height: 60,
-                              padding: EdgeInsets.only(left: 10),
-                              margin: EdgeInsets.symmetric(vertical: 10),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: DropdownButton(
-                                underline: Divider(
-                                  color: Colors.transparent,
-                                ),
-                                hint: Text(
-                                  "${CommitConstTexts.comitFound}",
-                                  style: TextStyle(fontSize: 25),
-                                ),
-                                items: Item.map((e) => DropdownMenuItem(
-                                      child: Text("$e"),
-                                      value: e,
-                                    )).toList(),
-                                onChanged: (value) {
-                                  // setState(() {
-                                  //   Found = value.toString();
-                                  // });
-                                },
-                                value: Found,
-                              ),
-                            ),
-                          ],
-                        )),
-                      ),
-                    ],
+                  BoxFormFiledRequest(
+                    title: "${CommitConstTexts.comitFound}",
+                    hintText: " Enter Found .. ",
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        height: 140,
-                        width: 330,
-                        padding: EdgeInsets.symmetric(horizontal: 5),
-                        child: Form(
-                            child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text(
-                              "${CommitConstTexts.comitProject}",
-                              style: TextStyle(
-                                  fontSize: 22,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Container(
-                              width: double.infinity,
-                              height: 60,
-                              padding: EdgeInsets.only(left: 10),
-                              margin: EdgeInsets.symmetric(vertical: 10),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: DropdownButton(
-                                underline: Divider(
-                                  color: Colors.transparent,
-                                ),
-                                hint: Text(
-                                  "${CommitConstTexts.comitProject}",
-                                  style: TextStyle(fontSize: 25),
-                                ),
-                                items: Item.map((e) => DropdownMenuItem(
-                                      child: Text("$e"),
-                                      value: e,
-                                    )).toList(),
-                                onChanged: (value) {
-                                  // setState(() {
-                                  //   Found = value.toString();
-                                  // });
-                                },
-                                value: Found,
-                              ),
-                            ),
-                          ],
-                        )),
-                      ),
-                    ],
+                  BoxFormFiledRequest(
+                    title: "${CommitConstTexts.comitProject}",
+                    hintText: " Enter Project .. ",
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: (() {
-                          Navigator.of(context)
-                              .pushReplacementNamed("homepage");
-                        }),
-                        child: Container(
-                          alignment: Alignment.center,
-                          margin: EdgeInsets.symmetric(vertical: 40),
-                          height: 50,
-                          width: 200,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(9),
-                          ),
-                          child: Text(
-                            "${TitlesConstText.Add}",
-                            style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     InkWell(
+                  //       onTap: (() {
+                  //         Navigator.of(context)
+                  //             .pushReplacementNamed("homepage");
+                  //       }),
+                  //       child: Container(
+                  //         alignment: Alignment.center,
+                  //         margin: EdgeInsets.symmetric(vertical: 40),
+                  //         height: 50,
+                  //         width: 200,
+                  //         decoration: BoxDecoration(
+                  //           color: Colors.white,
+                  //           borderRadius: BorderRadius.circular(9),
+                  //         ),
+                  //         child: Text(
+                  //           "${TitlesConstText.Add}",
+                  //           style: TextStyle(
+                  //               fontSize: 30, fontWeight: FontWeight.bold),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                 ],
               ),
             )),
