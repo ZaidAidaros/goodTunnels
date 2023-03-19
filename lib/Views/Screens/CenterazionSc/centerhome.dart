@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:goodtunnels/Controllers/CenterControllers/cenhomecontroller.dart';
+import 'package:goodtunnels/Core/Constants/Pages/getpages.dart';
+import 'package:goodtunnels/Core/Constants/TitlesConstTexts.dart';
+import 'package:goodtunnels/Views/Widgets/MainDrawerwidget.dart';
 
 class CenterHomeSc extends GetView<CenHomeController> {
   const CenterHomeSc({super.key});
@@ -11,13 +14,13 @@ class CenterHomeSc extends GetView<CenHomeController> {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Color.fromARGB(255, 62, 82, 146),
         appBar: AppBar(
           title: Container(
               alignment: Alignment.bottomRight,
-              padding:const EdgeInsets.only(right: 20),
+              padding: const EdgeInsets.only(right: 20),
               child: const Text(
-                " الرئيسة",
+                "${TitlesConstText.Home}",
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800),
               )),
           backgroundColor: Colors.white,
@@ -25,82 +28,7 @@ class CenterHomeSc extends GetView<CenHomeController> {
           toolbarHeight: 70,
           elevation: 0,
         ),
-        drawer: Drawer(
-          backgroundColor:const Color.fromARGB(225, 255, 255, 255),
-          child: Column(children: [
-           const UserAccountsDrawerHeader(
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 136, 160, 226),
-                ),
-                currentAccountPicture: CircleAvatar(
-                  backgroundColor: Colors.white,
-                ),
-                accountName: Text("BASEL AHMED"),
-                accountEmail: Text("baselahmed856@gmail.com")),
-            ListTile(
-              shape:const Border(bottom: BorderSide(color: Colors.blue)),
-              trailing:const Icon(Icons.home),
-              iconColor: Colors.blue,
-              title:const Text(
-                "الصفحة الرئيسة",
-                style: TextStyle(fontSize: 23, fontWeight: FontWeight.normal),
-                textAlign: TextAlign.end,
-              ),
-              onTap: () {
-                Navigator.of(context).pushReplacementNamed("MainHome");
-              },
-            ),
-            ListTile(
-              shape: Border(bottom: BorderSide(color: Colors.blue)),
-              trailing: Icon(Icons.add),
-              iconColor: Colors.blue,
-              title: Text(
-                "   الطلبات الاتية",
-                style: TextStyle(fontSize: 23, fontWeight: FontWeight.normal),
-                textAlign: TextAlign.end,
-              ),
-              onTap:()=>controller.goToIncomingReq(),
-            ),
-            ListTile(
-              shape: Border(bottom: BorderSide(color: Colors.blue)),
-              trailing: Icon(Icons.bookmark_outline),
-              iconColor: Colors.blue,
-              title: Text(
-                "الفروع",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.normal),
-                textAlign: TextAlign.end,
-              ),
-              onTap: () {
-                Navigator.of(context).pushReplacementNamed("AllBranches");
-              },
-            ),
-            ListTile(
-              shape: Border(bottom: BorderSide(color: Colors.blue)),
-              trailing: Icon(Icons.settings),
-              iconColor: Colors.blue,
-              title: Text(
-                " الاعدادت",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.normal),
-                textAlign: TextAlign.end,
-              ),
-              onTap: () {
-                Navigator.of(context).pushReplacementNamed("MainSettings");
-              },
-            ),
-            ListTile(
-              trailing: Icon(Icons.exit_to_app),
-              iconColor: Colors.blue,
-              title: Text(
-                " تسجيل خروج",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.normal),
-                textAlign: TextAlign.end,
-              ),
-              onTap: () {
-                Navigator.of(context).pushReplacementNamed("load");
-              },
-            ),
-          ]),
-        ),
+        drawer: MainDrawerWidget(),
         body: ListView(
           children: [
             Container(
@@ -118,7 +46,7 @@ class CenterHomeSc extends GetView<CenHomeController> {
                         Container(
                           height: 120,
                           width: 300,
-                          padding:const EdgeInsets.symmetric(vertical: 25),
+                          padding: const EdgeInsets.symmetric(vertical: 25),
                           margin: const EdgeInsets.symmetric(vertical: 25),
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -126,15 +54,15 @@ class CenterHomeSc extends GetView<CenHomeController> {
                           ),
                           child: ListTile(
                             iconColor: Colors.blue,
-                            title:const Text(
-                              "  الطلبات الاتية",
+                            title: const Text(
+                              "${TitlesConstText.ComingCommintement}",
                               style: TextStyle(
                                 fontSize: 33,
                                 fontWeight: FontWeight.w500,
                               ),
                               textAlign: TextAlign.center,
                             ),
-                            onTap: () =>controller.goToIncomingReq(),
+                            onTap: () => controller.goToIncomingReq(),
                           ),
                         ),
                       ],
@@ -153,7 +81,7 @@ class CenterHomeSc extends GetView<CenHomeController> {
                           ),
                           child: ListTile(
                             iconColor: Colors.blue,
-                            title:const Text(
+                            title: const Text(
                               "  الفروع",
                               style: TextStyle(
                                 fontSize: 33,
@@ -163,7 +91,8 @@ class CenterHomeSc extends GetView<CenHomeController> {
                             ),
                             onTap: () {
                               Navigator.of(context)
-                                  .pushReplacementNamed("AllBranches");
+                                  .pushReplacementNamed(AppPages.branches);
+                              print("object");
                             },
                           ),
                         ),
@@ -175,15 +104,15 @@ class CenterHomeSc extends GetView<CenHomeController> {
                         Container(
                           height: 150,
                           width: 300,
-                          padding:const EdgeInsets.symmetric(vertical: 50),
-                          margin:const EdgeInsets.symmetric(vertical: 25),
+                          padding: const EdgeInsets.symmetric(vertical: 50),
+                          margin: const EdgeInsets.symmetric(vertical: 25),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: ListTile(
                             iconColor: Colors.blue,
-                            title:const Text(
+                            title: const Text(
                               "  الاعدادت",
                               style: TextStyle(
                                 fontSize: 33,
@@ -193,7 +122,7 @@ class CenterHomeSc extends GetView<CenHomeController> {
                             ),
                             onTap: () {
                               Navigator.of(context)
-                                  .pushReplacementNamed("MainSettings");
+                                  .pushReplacementNamed(AppPages.settings);
                             },
                           ),
                         ),
